@@ -1,3 +1,20 @@
+@import './components/shared/movies-list';
+@import './components/shared/movie-card-content';
+@import './components/shared/movie-card';
+
 body {
-    background-color: red;
-}
+    background-color: rgb(20, 20, 20);
+  }
+
+  button.MuiButtonBase-root-58.MuiButton-root-32.MuiButton-text-34.MuiButton-flat-37.movie-button-edit.MuiCardActions-action-31 {
+    width: 100%;
+  }
+  
+  .MuiCardActions-root-30.movie-card-actions {
+    padding: 0;
+  }
+  
+  button.MuiButtonBase-root-58.MuiButton-root-32.MuiButton-text-34.MuiButton-flat-37.movie-button-edit.MuiCardActions-action-31 {
+    padding: 0;
+    min-height: 20px;
+  }

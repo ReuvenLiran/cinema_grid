@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './_app.scss';
 import MoviesList from './components/shared/MoviesList';
 
 class App extends Component {

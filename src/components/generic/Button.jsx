@@ -4,7 +4,10 @@ import MUIButton from '@material-ui/core/Button';
 
 const Button = props => {
 const { className, children } = props;
-return (<MUIButton className={className}>
+return (<MUIButton
+        size="small"
+        className={className}
+    >
         {children}
     </MUIButton>);
 };

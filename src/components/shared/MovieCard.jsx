@@ -29,8 +29,10 @@ const MovieCard = props => {
             genre={genre}
             runtime={time}
         />
-        <CardActions>
-          <Button className="movie-button-edit">Learn More</Button>
+        <CardActions className="movie-card-actions">
+          <Button className="movie-button-edit">
+            Edit Details
+          </Button>
         </CardActions>
       </Card>)
 };

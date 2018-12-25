@@ -14,7 +14,7 @@ const MovieCardContent = props => {
         backgroundImage: `url(${poster})`,
     };
 
-    const details = <div className="runtime">
+    const details = <div className="movie-card-content-details">
         {runtime}
         &nbsp;
         &#8226;
@@ -30,7 +30,7 @@ const MovieCardContent = props => {
         style={style}
     >
         <div className="movie-card-content-info">
-            <h5 className="title">{title}</h5>
+            <h5 className="movie-card-content-title">{title}</h5>
             {details}
         </div>
     </CardContent>);
