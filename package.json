@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.7.1",
     "classnames": "^2.2.6",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",

@@ -1,29 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
-import Modal from '@material-ui/core/Modal';
-import { withStyles } from '@material-ui/core/styles';
-
-function getModalStyle() {
-  const TOP = '50%';
-  const LEFT = TOP
-
-  return {
-    top: TOP,
-    left: LEFT,
-    transform: `translate(-${TOP}, -${LEFT})`,
-  };
-}
-
-const styles = theme => ({
-  paper: {
-    position: 'absolute',
-    width: theme.spacing.unit * 50,
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing.unit * 4,
-  },
-});
 
 class SimpleModal extends React.Component {
   state = {
