@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Button, CardContent, CardActions } from '../generic';
+import { Card } from '../generic';
 import {
     getYear,
     getGenre,
     getTime,
 } from './utils';
-import MovieCardContent from './MovieCardContent';
+import MovieCardContent from './MovieCardContent.container';
 
 const MovieCard = props => {
     const {
@@ -21,19 +21,15 @@ const MovieCard = props => {
     const genre = getGenre(genreIds, genresOptions);
     const time = getTime(runtime);
 
-    return (<Card className="movie-card">
-        <MovieCardContent
-            title={title}
-            poster={poster}
-            year={year}
-            genre={genre}
-            runtime={time}
-        />
-        <CardActions className="movie-card-actions">
-          <Button className="movie-button-edit">
-            Edit Details
-          </Button>
-        </CardActions>
+    return (
+        <Card className="movie-card">
+            <MovieCardContent
+                title={title}
+                poster={poster}
+                year={year}
+                genre={genre}
+                runtime={time}
+            />
       </Card>)
 };
 

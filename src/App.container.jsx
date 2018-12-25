@@ -11,6 +11,7 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = state => ({
     movies: state.movies,
     genresOptions: state.genres,
+    isModalOpen: state.moviesModal.isOpen,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

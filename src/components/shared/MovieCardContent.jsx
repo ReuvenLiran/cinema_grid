@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CardContent } from '../generic';
+import EditButton from './EditButton';
 
 const MovieCardContent = props => {
     const {
@@ -9,6 +10,7 @@ const MovieCardContent = props => {
         runtime,
         year,
         genre,
+        openModal,
     } = props;
     const style = {
         backgroundImage: `url(${poster})`,
@@ -30,8 +32,11 @@ const MovieCardContent = props => {
         style={style}
     >
         <div className="movie-card-content-info">
-            <h5 className="movie-card-content-title">{title}</h5>
-            {details}
+            <div>
+                <h5 className="movie-card-content-title">{title}</h5>
+                {details}
+            </div>
+            <EditButton onClick={openModal} />
         </div>
     </CardContent>);
 }

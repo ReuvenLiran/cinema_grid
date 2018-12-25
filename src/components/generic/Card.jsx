@@ -4,9 +4,12 @@ import MUICard from '@material-ui/core/Card';
 
 const Card = props => {
 const { className, children } = props;
-return (<MUICard className={className}>
+return (<div className={className}>
         {children}
-    </MUICard>);
+    </div>);
+// return (<div className={className}>
+//         {children}
+//     </div>);
 };
 
 Card.propTypes = {
