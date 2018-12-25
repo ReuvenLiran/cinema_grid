@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import MovieCard from './components/shared/MovieCard';
+import MoviesList from './components/shared/MoviesList';
 
 class App extends Component {
-  render() {
+  componentDidMount() {
     this.props.getMovies();
+    this.props.getGenres();
+  }
+  render() {
+    const { movies, genresOptions } = this.props;
     return (
       <div className="App">
-        <MovieCard />
+        <MoviesList 
+          movies={movies}
+          genresOptions={genresOptions}
+        />
       </div>
     );
   }

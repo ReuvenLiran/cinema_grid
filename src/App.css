@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(229, 229, 229);
 }
 
 .App-link {
@@ -29,4 +29,76 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+}
+.movie-card {
+  min-width: 300px;
+  margin: 8px;
+
+  max-width: 400px;
+  min-height: 150px;
+  padding: 0;
+}
+
+.movie-poster {
+  background-size: contain;
+  height: 300px;
+  width: 100%;
+}
+
+.MuiCardContent-root-29.movie-card-content {
+  padding: 0;
+  position: relative;
+}
+
+.movie-card-content  {
+  height: calc(100% - 40px);
+  background-size: cover;
+  background-position: center;
+}
+
+button.MuiButtonBase-root-58.MuiButton-root-32.MuiButton-text-34.MuiButton-flat-37.movie-button-edit.MuiCardActions-action-31 {
+  width: 100%;
+}
+
+.movies-list {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  justify-items: center;
+  /* justify-content: space-between;
+  justify-items: center; */
+}
+
+.title {
+  margin: 0; 
+  overflow:hidden;
+  display:inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* width: calc(100% - 8px); */
+  margin-right: 6px;
+}
+
+.movie-card-content-info {
+  /* padding: 0 8px; */
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  bottom: 0;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4px;
+}
+
+.runtime {
+  font-size: 0.7em;
 }
