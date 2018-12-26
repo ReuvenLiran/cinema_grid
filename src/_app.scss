@@ -2,11 +2,12 @@ $white: rgb(229, 229, 229);
 $black: rgb(20, 20, 20);
 $modal-background: rgb(70,70,70);
 
-@import './components/generic/modal';
-@import './components/shared/movies-list';
-@import './components/shared/movie-card-edit-button';
-@import './components/shared/movie-card-content';
-@import './components/shared/movie-card';
+@import 'genericComponents/modal';
+@import 'shared/index';
+// @import './components/shared/movies-list';
+// @import './components/shared/movie-card-edit-button';
+// @import './components/shared/movie-card-content';
+// @import './components/shared/movie-card';
 
 body {
     background-color: $black;

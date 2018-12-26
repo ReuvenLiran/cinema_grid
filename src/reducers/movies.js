@@ -1,4 +1,4 @@
-import { GET_MOVIES_SUCCESS } from '../actions/movies';
+import { GET_MOVIES_SUCCESS } from 'actions';
 
 const movies = [];
 

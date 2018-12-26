@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card } from '../generic';
+import { Card } from 'genericComponents';
 import {
     getYear,
     getGenre,
     getTime,
 } from './utils';
-import MovieCardContent from './MovieCardContent.container';
+import { MovieCardContent } from './parts';
 
 const MovieCard = props => {
     const {

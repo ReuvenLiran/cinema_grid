@@ -1,0 +1,1 @@
+export { MovieCardContent } from './movieCardContent';

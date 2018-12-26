@@ -18,9 +18,14 @@ import {
 	getMovies as getMoviesAPI,
 	getGenres as getGenresAPI,
 	getMoviesRuntime as getMoviesRuntimeAPI,
-		 } from './servies';
-import { GET_MOVIES, getMovies as getMoviesAction } from '../actions/movies';
-import { getGenres as getGenresAction, GET_GENRES } from '../actions/genres';
+} from './servies';
+
+import { 
+	GET_MOVIES,
+	getMovies as getMoviesAction,
+	getGenres as getGenresAction, 
+	GET_GENRES,
+} from 'actions';
 
 const dataService = store => next => async action => {
 	next(action)

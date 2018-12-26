@@ -1,0 +1,1 @@
+export { default as MovieCardContent } from './MovieCardContent.container';

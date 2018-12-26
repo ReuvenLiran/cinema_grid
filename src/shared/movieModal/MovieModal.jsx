@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal } from '../generic';
+import { Modal } from 'genericComponents';
 
 const MovieModal = props => {
     const { isOpen } = props;

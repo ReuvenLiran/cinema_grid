@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './_app.scss';
-import MoviesList from './components/shared/MoviesList';
-import MovieModal from './components/shared/MovieModal';
+import { MoviesList, MovieModal } from 'shared';
 
 class App extends Component {
   componentDidMount() {

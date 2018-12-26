@@ -1,7 +1,7 @@
 import { 
     CLOSE_MODAL,
     OPEN_MODAL,
-} from '../actions';
+} from 'actions';
 
 const initailState = {
     isOpen: false,

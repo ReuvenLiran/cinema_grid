@@ -1,4 +1,4 @@
-import { GET_GENRES_SUCCESS } from '../actions/genres';
+import { GET_GENRES_SUCCESS } from 'actions';
 
 const genres = [];
 
