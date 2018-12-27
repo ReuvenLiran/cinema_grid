@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Button = props => {
-const { className, children, onClick } = props;
+const { className, children, onClick, ...other } = props;
 return (
     <button
         type="button" 
-        className={classNames('btn btn-outline-primary', className)}
+        className={classNames('btn', className)}
         onClick={onClick}  
-        data-toggle="modal" 
-        data-target="#exampleModal"     
+        {...other}    
     >
         {children}
     </button>

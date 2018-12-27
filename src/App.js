@@ -8,15 +8,14 @@ class App extends Component {
     this.props.getGenres();
   }
   render() {
-    const { movies, genresOptions, isModalOpen } = this.props;
-    console.log({ isModalOpen })
+    const { movies, genresOptions } = this.props;
     return (
       <div className="App">
         <MoviesList 
           movies={movies}
           genresOptions={genresOptions}
         />
-        <MovieModal isOpen={isModalOpen} />
+        <MovieModal />
       </div>
     );
   }

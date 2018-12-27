@@ -1,5 +1,6 @@
 .movie-card {   
-    .movie-card-edit-button.btn-outline-primary:not(:disabled):not(.disabled) {
+    .movie-card-edit-button {
+    // .movie-card-edit-button.btn-outline-primary:not(:disabled):not(.disabled) {
         background: transparent;
                     // , .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle
         color: rgba($white, 0.7);

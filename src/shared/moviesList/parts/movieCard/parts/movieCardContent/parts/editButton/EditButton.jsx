@@ -7,7 +7,7 @@ const EditButton = props => <Button
     onClick={props.onClick}
     className="movie-card-edit-button"
     >
-        <i class="material-icons">edit</i>
+        <i className="material-icons">edit</i>
     </Button>;
 
 export default EditButton;

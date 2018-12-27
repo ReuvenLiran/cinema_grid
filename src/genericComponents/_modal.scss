@@ -1,7 +1,111 @@
-.modal-content {
-    background-color: $modal-background;
+
+@keyframes modal-content-fade-in {
+  0% { 
+    opacity: 0.5;
+    transform: translate(-50%, -80%);
+  }
+  75% { 
+    opacity: 0.8;
+    transform: translate(-50%, -50%);
+  }
+  100% { 
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+@keyframes modal-content-fade-out {
+  0% { 
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  60% { 
+    opacity: 0.8;
+    transform: translate(-50%, 0);
+  }
+  100% { 
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes modal-overlay-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modal--overlay-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+$modal-content-fade-in-time: .3s;
+$modal-content-fade-out-time: .4s;
+$modal-overlay-fade-in-time: .2s;
+$modal-overlay-fade-out-time: .2s;
+
+.dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: $modal-background;
+  color: $white;
+  overflow: auto;
+  border-radius: 2px;
+  outline: none;
+  padding: 20px;
+  width: 40%;
+  height: 40%;
+
+  .btn.close {
     color: $white;
-    .close {
-        color: $white;
-    }
+  }
+
+  &.ReactModal__Content--after-open{
+    animation: 
+      modal-content-fade-in $modal-content-fade-in-time 
+      ease-in $modal-overlay-fade-in-time 
+      both;
+  }
+  &.ReactModal__Content--before-close{
+    animation: 
+      modal-content-fade-out 
+      $modal-content-fade-out-time
+      ease-out 
+      both;
+  }
+}
+
+
+.dialog-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  &.ReactModal__Overlay--after-open{
+    animation: 
+      modal-overlay-fade-in 
+      $modal-overlay-fade-in-time
+      ease-in 
+      both;
+  }
+  
+  &.ReactModal__Overlay--before-close{
+    animation: 
+    modal-overlay-fade-out 
+    $modal-overlay-fade-out-time 
+    ease-in-out 
+    both 
+    $modal-content-fade-out-time;
+  }
+  
 }
