@@ -14,7 +14,7 @@ const Modal = props => {
   } = props;
   return (<ReactModal 
     key={'modal'}
-    closeTimeoutMS={600}
+    closeTimeoutMS={750}
     isOpen={isOpen}
     className={classNames("dialog", className)}
     shouldCloseOnOverlayClick

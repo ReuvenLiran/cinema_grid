@@ -1,11 +1,11 @@
 
 @keyframes modal-content-fade-in {
   0% { 
-    opacity: 0.5;
-    transform: translate(-50%, -80%);
+    opacity: 0.3;
+    transform: translate(-50%, -70%);
   }
-  75% { 
-    opacity: 0.8;
+  60% { 
+    opacity: 0.6;
     transform: translate(-50%, -50%);
   }
   100% { 
@@ -19,11 +19,11 @@
     transform: translate(-50%, -50%);
   }
   60% { 
-    opacity: 0.8;
-    transform: translate(-50%, 0);
+    opacity: 0.7;
+    transform: translate(-50%, -30%);
   }
   100% { 
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -30%);
     opacity: 0;
   }
 }
@@ -45,10 +45,10 @@
   }
 }
 
-$modal-content-fade-in-time: .3s;
-$modal-content-fade-out-time: .4s;
+$modal-content-fade-in-time: .4s;
+$modal-content-fade-out-time: .5s;
 $modal-overlay-fade-in-time: .2s;
-$modal-overlay-fade-out-time: .2s;
+$modal-overlay-fade-out-time: .25s;
 
 .dialog {
   position: absolute;
@@ -74,15 +74,17 @@ $modal-overlay-fade-out-time: .2s;
   }
   &.ReactModal__Content--after-open{
     animation: 
-      modal-content-fade-in $modal-content-fade-in-time 
-      ease-in $modal-overlay-fade-in-time 
+      modal-content-fade-in 
+      $modal-content-fade-in-time 
+      ease-in-out 
+      $modal-overlay-fade-in-time 
       both;
   }
   &.ReactModal__Content--before-close{
     animation: 
       modal-content-fade-out 
       $modal-content-fade-out-time
-      ease-out 
+      ease-in-out
       both;
   }
 }
@@ -100,7 +102,7 @@ $modal-overlay-fade-out-time: .2s;
     animation: 
       modal-overlay-fade-in 
       $modal-overlay-fade-in-time
-      ease-in 
+      ease-in-out
       both;
   }
   
