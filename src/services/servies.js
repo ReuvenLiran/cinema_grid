@@ -13,10 +13,10 @@ export const getMovies = async () => {
   const moviesIds = [];
   const movies = rawMovies.map((m) => {
     const {
-      genre_ids,
+      genre_ids, //eslint-disable-line
       id,
-      poster_path,
-      release_date,
+      poster_path, //eslint-disable-line
+      release_date, //eslint-disable-line
       runtime,
       title,
     } = m;

@@ -1,12 +1,20 @@
 @import './parts/index.scss';
+@mixin set-flex-basis($max-width, $flex-basis) {
+  @media(max-width: $max-width) {
+    .movie-card  {
+      flex-basis: $flex-basis;
+    }
+  }
+}
 
 .movie-card {
-    // min-width: 300px;
-    margin: 5px;
-    height: 225px;
-    width: 400px;    padding: 0;
-    padding: 0;
-    // max-width: 400px;
-    // min-height: 150px;
-  }
-  
+  height: 225px;
+  flex-basis: 25%;
+  width: 400px;
+  position: relative;
+  padding: 10px;
+}
+
+@include set-flex-basis(1333px, 33.33%);
+@include set-flex-basis(1073px, 50%);
+@include set-flex-basis(815px, 100%);

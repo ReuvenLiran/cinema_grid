@@ -1,4 +1,3 @@
-import { GET_MOVIES } from '../actions';
 import {
   GET_MOVIES,
   SELECT_MOVIE,

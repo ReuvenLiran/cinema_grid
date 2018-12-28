@@ -1,12 +1,14 @@
 @import './parts/index';
 
-.movies-list {
-    display: flex;
-    padding: 10px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    justify-items: center;
-    /* justify-content: space-between;
-    justify-items: center; */
+.movies-list-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    .movies-list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
 }
   

@@ -2,25 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MovieCard } from './parts';
 
-const MoviesList = props => {
-    const { movies, genresOptions } = props;
-    
-    return (<ul className="movies-list">
-    {movies.map(movie => (
-        <MovieCard
+const MoviesList = (props) => {
+  const {
+    movies,
+  } = props;
+
+  return (
+    <div className="movies-list-container">
+      <div className="movies-list">
+        {movies.map(movie => (
+          <MovieCard
             key={movie.id}
             id={movie.id}
             poster={movie.poster}
-            // poster={movie.poster}
-            // id={movie.id}
-            // title={movie.title}
-            // runtime={movie.runtime}
-            // year={movie.year}
-            // genreIds={movie.genreIds}
-            // genresOptions={genresOptions}
-        />
-    ))}
-    </ul>);
+          />
+        ))}
+      </div>
+    </div>
+  );
 };
 
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      poster: PropTypes.string,
+    }),
+  ).isRequired,
+};
 export default MoviesList;
