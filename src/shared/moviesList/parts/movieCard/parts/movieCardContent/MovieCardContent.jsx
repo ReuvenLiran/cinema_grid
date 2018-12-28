@@ -11,6 +11,8 @@ const MovieCardContent = props => {
         year,
         genre,
         openModal,
+        selectMovie,
+        id,
     } = props;
     const style = {
         backgroundImage: `url(${poster})`,
@@ -36,7 +38,10 @@ const MovieCardContent = props => {
                 <h5 className="movie-card-content-title">{title}</h5>
                 {details}
             </div>
-            <EditButton onClick={openModal} />
+            <EditButton onClick={() => {
+                selectMovie(id);
+                openModal();
+            }} />
         </div>
     </CardContent>);
 }

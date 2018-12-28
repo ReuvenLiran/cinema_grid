@@ -11,13 +11,13 @@ import { MovieCardContent } from './parts';
 const MovieCard = props => {
     const {
         title,
-        releaseDate,
+        year,
         runtime,
         genreIds,
+        id,
         poster,
         genresOptions,
     } = props;
-    const year = getYear(releaseDate);
     const genre = getGenre(genreIds, genresOptions);
     const time = getTime(runtime);
 
@@ -29,6 +29,7 @@ const MovieCard = props => {
                 year={year}
                 genre={genre}
                 runtime={time}
+                id={id}
             />
       </Card>)
 };

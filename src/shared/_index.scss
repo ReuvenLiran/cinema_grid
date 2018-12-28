@@ -1,1 +1,13 @@
 @import './moviesList/movies-list';
+
+
+.movie-modal {
+    .apply-button {
+        background-color: #00838F;
+        color: $white;
+    }
+    .close-button {
+        background-color: $white;
+        color: $black;
+    }
+}

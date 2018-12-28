@@ -10,9 +10,10 @@ const MoviesList = props => {
         <MovieCard
             key={movie.id}
             poster={movie.poster}
+            id={movie.id}
             title={movie.title}
             runtime={movie.runtime}
-            releaseDate={movie.releaseDate}
+            year={movie.year}
             genreIds={movie.genreIds}
             genresOptions={genresOptions}
         />

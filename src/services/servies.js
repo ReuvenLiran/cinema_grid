@@ -5,6 +5,8 @@ const getData = (restParams) => {
     return fetch(url);
 }
 
+const getYear = date => date.substring(0, 4);
+
 export const getMovies = async () => {
     const resp = await getData('movie/popular?page=1&language=en-US');
     const { results: rawMovies} = await resp.json();
@@ -23,7 +25,7 @@ export const getMovies = async () => {
         genreIds: genre_ids,
         id,
         poster: `https://image.tmdb.org/t/p/w500${poster_path}`,
-        releaseDate: release_date,
+        year: getYear(release_date),
         title,
         runtime,
       });

@@ -60,13 +60,18 @@ $modal-overlay-fade-out-time: .2s;
   border-radius: 2px;
   outline: none;
   padding: 20px;
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  min-width: 400px;
+  height: auto;
 
   .btn.close {
     color: $white;
   }
-
+  .modal-button {
+    width: 64px;
+    padding: 8px 16px;
+    box-sizing: content-box;
+  }
   &.ReactModal__Content--after-open{
     animation: 
       modal-content-fade-in $modal-content-fade-in-time 

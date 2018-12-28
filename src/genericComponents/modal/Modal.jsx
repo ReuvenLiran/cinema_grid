@@ -6,11 +6,16 @@ import ReactModal from 'react-modal';
 ReactModal.setAppElement('#root');
 
 const Modal = props => {
-  const { isOpen, children, onClose } = props;
+  const { 
+    isOpen,
+    className,
+    children, 
+    onClose,
+  } = props;
   return (<ReactModal 
     closeTimeoutMS={600}
     isOpen={isOpen}
-    className="dialog"
+    className={classNames("dialog", className)}
     shouldCloseOnOverlayClick
     onRequestClose={onClose}
     overlayClassName="dialog-overlay"
@@ -24,6 +29,7 @@ Modal.propTypes = {
   children: PropTypes.node.isRequired,
   onClose: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default Modal;

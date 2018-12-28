@@ -22,13 +22,16 @@ import {
 
 import { 
 	GET_MOVIES,
+	GET_MOVIES_SUCCESS,
 	getMovies as getMoviesAction,
 	getGenres as getGenresAction, 
 	GET_GENRES,
+	initalizeMovies,
 } from 'actions';
 
 const dataService = store => next => async action => {
 	next(action)
+	console.log(action.type);
 	switch (action.type) {
 
 	case GET_GENRES: {
@@ -49,11 +52,35 @@ const dataService = store => next => async action => {
 				director: directors[movie.id],
 			}));
 			next(getMoviesAction(moviesWithDirectors));
+			const editeMovies = moviesWithDirectors.reduce((total, movie) => {
+				const { id, director, year, runtime, title, genreIds } = movie;
+				total.set(id, {
+					director,
+					year,
+					runtime,
+					title,
+					genreIds,
+				});
+				return total;
+			}, new Map());
+			console.log({editeMovies})
+			next(initalizeMovies(editeMovies));
+			
 		} catch (e) {
 			console.error(e);
 		}
 		break;
 	}
+	// case GET_MOVIES_SUCCESS: {
+	// 	console.log(GET_MOVIES_SUCCESS);
+	// 	const { movies } = store.getState();
+	// 	const editeMovies = movies.reduce((movie, total) => {
+	// 		const { id, ...data } = movie;
+	// 		total.add(id, data);
+	// 	}, new Map());
+	// 	next(initalizeMovies(editeMovies));
+	// 	break;
+	// }
 	default:
 		break
 	}
