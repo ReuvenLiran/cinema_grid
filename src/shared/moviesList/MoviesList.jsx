@@ -9,13 +9,15 @@ const MoviesList = props => {
     {movies.map(movie => (
         <MovieCard
             key={movie.id}
-            poster={movie.poster}
             id={movie.id}
-            title={movie.title}
-            runtime={movie.runtime}
-            year={movie.year}
-            genreIds={movie.genreIds}
-            genresOptions={genresOptions}
+            poster={movie.poster}
+            // poster={movie.poster}
+            // id={movie.id}
+            // title={movie.title}
+            // runtime={movie.runtime}
+            // year={movie.year}
+            // genreIds={movie.genreIds}
+            // genresOptions={genresOptions}
         />
     ))}
     </ul>);

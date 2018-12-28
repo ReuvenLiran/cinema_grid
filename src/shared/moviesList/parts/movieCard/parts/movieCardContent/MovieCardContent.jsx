@@ -2,24 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CardContent } from 'genericComponents';
 import { EditButton } from './parts';
+import {
+    getGenre,
+    getTime,
+} from './utils';
 
 const MovieCardContent = props => {
     const {
-        title,
-        poster,
-        runtime,
-        year,
-        genre,
         openModal,
         selectMovie,
         id,
+        poster,
+        movies,
+        genresOptions,
     } = props;
+    console.log({
+        props,
+    });
+    const movie = movies.get(id);
+    const {
+        title,
+        year,
+        runtime,
+        genreIds,
+    } = movie;
+    const genre = getGenre(genreIds, genresOptions);
+    const time = getTime(runtime);
+
     const style = {
         backgroundImage: `url(${poster})`,
     };
 
     const details = <div className="movie-card-content-details">
-        {runtime}
+        {time}
         &nbsp;
         &#8226;
         &nbsp;
@@ -29,6 +44,10 @@ const MovieCardContent = props => {
         &nbsp;
         {genre}
     </div>;
+    const onEdit = () => {
+        selectMovie(id);
+        openModal();
+    };
     return (<CardContent 
         className="movie-card-content"
         style={style}
@@ -38,10 +57,7 @@ const MovieCardContent = props => {
                 <h5 className="movie-card-content-title">{title}</h5>
                 {details}
             </div>
-            <EditButton onClick={() => {
-                selectMovie(id);
-                openModal();
-            }} />
+            <EditButton onClick={onEdit} />
         </div>
     </CardContent>);
 }

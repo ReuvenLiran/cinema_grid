@@ -8,12 +8,12 @@ class App extends Component {
     this.props.getGenres();
   }
   render() {
-    const { movies, genresOptions } = this.props;
+    const { show, movies } = this.props;
+    if (!show) return null;
     return (
       <div className="App">
         <MoviesList 
           movies={movies}
-          genresOptions={genresOptions}
         />
         <MovieModal key="MAIN_MOVIE_MODAL" />
       </div>

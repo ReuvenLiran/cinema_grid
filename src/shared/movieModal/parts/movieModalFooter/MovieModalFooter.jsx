@@ -7,9 +7,18 @@ import ApplyButton from './ApplyButton';
 import CloseButton from './CloseButton';
 
 const MovieModalFooter = props => {
+    const { closeModal, applyModal } = props;
+    const onApply = () => {
+        applyModal();
+        closeModal();
+    };
     return (<ModalFooter key="movie-modal-footer">
-        <CloseButton />
-        <ApplyButton />  
+        <CloseButton 
+            onClick={closeModal}
+        >
+            Close
+        </CloseButton>
+        <ApplyButton onClick={onApply} />  
     </ModalFooter>);
 };
 

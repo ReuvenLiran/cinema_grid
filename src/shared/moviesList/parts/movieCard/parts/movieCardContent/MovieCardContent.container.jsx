@@ -7,5 +7,10 @@ const mapDispatchToProps = (dispatch) => ({
     selectMovie: (id) => dispatch(selectMovie(id)),
 });
 
-export default connect(null, mapDispatchToProps)(MovieCardContent);
+const mapStateToProps = state => ({
+    movies: state.moviesUI.editedMovies,
+    genresOptions: state.genres,
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MovieCardContent);
 

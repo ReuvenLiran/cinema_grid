@@ -1,12 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ApplyButton as ModalApplyButton } from 'genericComponents';
 
-const ApplyButton = () => {
+const ApplyButton = props => {
+    const { onClick } = props;
     return (<ModalApplyButton
-        onClick={() => {}}
+        onClick={onClick}
     >
         Edit
     </ModalApplyButton>);
 };
+
+ApplyButton.propTypes = {
+    onClick: PropTypes.func.isRequired,
+}
 
 export default ApplyButton;

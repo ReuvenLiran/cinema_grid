@@ -8,10 +8,22 @@ const mapDispatchToProps = (dispatch) => ({
     getGenres: () => dispatch({ type: GET_GENRES}),
 });
 
+const getShow = state => {
+    const {
+        moviesUI: {
+            editedMovies,
+        },
+        genres,
+    } = state;
+    const show = editedMovies.size > 0 && genres.length > 0;
+    return show;
+}
 const mapStateToProps = state => ({
-    movies: state.movies,
-    genresOptions: state.genres,
+    movies: state.movies.map(m => ({
+        id: m.id,
+        poster: m.poster,    
+    })),
+    show: getShow(state),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-

@@ -28,6 +28,8 @@ import {
 	GET_GENRES,
 	updateModal,
 	initalizeMovies,
+	APPLY_MODAL,
+	editMovie,
 } from 'actions';
 
 const dataService = store => next => async action => {
@@ -81,6 +83,17 @@ const dataService = store => next => async action => {
 		next(updateModal(movieData));
 		break;
 	}	
+	case APPLY_MODAL: {
+		const {
+			moviesModal: {
+				data,
+			},
+			moviesUI: {
+				selectedId,
+			}
+		} = store.getState();
+		next(editMovie(selectedId, data));
+	}
 	default:
 		break
 	}
