@@ -1,17 +1,16 @@
 import { connect } from 'react-redux';
-import { 
-    updateModal,
+import {
+  updateModal,
 } from 'actions';
 import MovieModalBody from './MovieModalBody';
 
-const mapDispatchToProps = (dispatch) => ({
-    updateModal: (data) => dispatch(updateModal(data)),
+const mapDispatchToProps = dispatch => ({
+  updateModal: data => dispatch(updateModal(data)),
 });
 
 
 const mapStateToProps = state => ({
-    ...state.moviesModal.data,
+  ...state.moviesModal.data,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieModalBody);
-

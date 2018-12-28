@@ -20,4 +20,5 @@ const EditButton = (props) => {
 EditButton.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
+
 export default EditButton;
