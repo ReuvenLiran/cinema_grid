@@ -1,14 +1,13 @@
-import { CloseButton } from 'genericComponents';
+import { CloseButton } from 'generic-components';
 import { connect } from 'react-redux';
 import { closeModal } from 'actions';
 
-const mapDispatchToProps = (dispatch) => ({
-    onClick: () => dispatch(closeModal()),
+const mapDispatchToProps = dispatch => ({
+  onClick: () => dispatch(closeModal()),
 });
 
 const mapStateToProps = () => ({
-    children: 'Close',    
+  children: 'Close',
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CloseButton);
-

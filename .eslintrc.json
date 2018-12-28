@@ -1,0 +1,12 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "react/forbid-prop-types": 1
+    },
+    "globals": {
+        "fetch": true
+    },
+    "settings": {
+      "import/core-modules": ["actions", "generic-components", "shared", "reducers"]
+    }
+}

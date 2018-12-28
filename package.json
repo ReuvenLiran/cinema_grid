@@ -4,21 +4,21 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
-    "lodash.debounce": "^4.0.8",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-modal": "^3.8.1",
     "react-redux": "^6.0.0",
     "react-scripts": "2.1.2",
-    "redux": "^4.0.1",
-    "uniqueid": "^1.0.0",
-    "uuid": "^3.3.2"
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "esw src/**/*.js src/**/*.jsx",
+    "lint-fix": "yarn lint --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,6 +30,12 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.0",
+    "eslint-watch": "^4.0.2",
     "node-sass": "^4.11.0"
   }
 }

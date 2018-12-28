@@ -1,13 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'genericComponents';
+import { Button } from 'generic-components';
 
-const EditButton = props => <Button 
-    size="small"
-    onClick={props.onClick}
-    className="movie-card-edit-button"
+const EditButton = (props) => {
+  const {
+    onClick,
+  } = props;
+  return (
+    <Button
+      size="small"
+      onClick={onClick}
+      className="movie-card-edit-button"
     >
-        <i className="material-icons">edit</i>
-    </Button>;
+      <i className="material-icons">edit</i>
+    </Button>
+  );
+};
 
+EditButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 export default EditButton;

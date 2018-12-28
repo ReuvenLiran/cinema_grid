@@ -1,0 +1,18 @@
+
+  .add-movie-fab {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    background: $white !important;
+    bottom: 4vh;
+    right: 4vw;
+    display: flex;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    border-radius: 50%; 
+    > i {
+      font-size: 42px;
+    }
+  }

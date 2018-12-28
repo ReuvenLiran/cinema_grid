@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './_app.scss';
-import { MoviesList, MovieModal } from 'shared';
+import { AddMovieFab, MoviesList, MovieModal } from 'shared';
 
 class App extends Component {
   componentDidMount() {
@@ -16,6 +16,7 @@ class App extends Component {
           movies={movies}
         />
         <MovieModal key="MAIN_MOVIE_MODAL" />
+        <AddMovieFab />
       </div>
     );
   }
