@@ -4,19 +4,25 @@ import { Button } from 'genericComponents';
 
 const CloseButton = props => {
     const { 
-        onClick
+        onClick,
+        children,
      } = props;
     return (
     <Button
         className="close-button modal-button"
         onClick={onClick}
     >   
-      Closes
+      {children}
     </Button>);
 };
 
 CloseButton.propTypes = {
     onClick: PropTypes.func.isRequired,
+    children: PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.string,
+    ]).isRequired,
 }
+
 
 export default CloseButton;

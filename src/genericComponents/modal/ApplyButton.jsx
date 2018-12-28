@@ -4,19 +4,24 @@ import { Button } from 'genericComponents';
 
 const ApplyButton = props => {
     const { 
-        onClick
+        onClick,
+        children,
      } = props;
     return (
     <Button
         className="apply-button modal-button"
         onClick={onClick}
     >   
-      Edit
+      {children}
     </Button>);
 };
 
 ApplyButton.propTypes = {
     onClick: PropTypes.func.isRequired,
+    children: PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.string,
+    ]).isRequired,
 }
 
 export default ApplyButton;

@@ -1,0 +1,1 @@
+export { default as MovieModalHeader } from './MovieModalHeader.container';

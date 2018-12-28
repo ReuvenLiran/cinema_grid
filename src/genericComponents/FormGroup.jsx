@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const FormGroup = props => {
     const { children } = props;
-    return (<div class="form-group">
+    return (<div className="form-group">
         {children}
     </div>);
 };

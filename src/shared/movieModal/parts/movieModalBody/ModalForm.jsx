@@ -4,7 +4,6 @@ import {
     FormGroup,
     InputField,
 } from 'genericComponents';
-import { Modal } from '../../genericComponents';
 
 const ModalForm = props => {
     const {
@@ -12,18 +11,22 @@ const ModalForm = props => {
         value, 
         onChange,
     } = props;
-    return (<FormGroup>
-        <label>{label}</label>
+    return (<FormGroup key={`form-group-${label}`}>
+        <label key={`form-label-${label}`}>{label}</label>
         <InputField 
-            onChange={onChange}
+            key={`form-input-${label}`}
+            onChangedValue={onChange}
             value={value}
-         />
+        />
     </FormGroup>);
 };
 
 ModalForm.propTypes = {
     label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]).isRequired,
     onChange: PropTypes.func.isRequired,
 };
 

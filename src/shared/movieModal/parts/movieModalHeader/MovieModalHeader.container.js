@@ -1,8 +1,8 @@
+import MovieModalHeader from './MovieModalHeader';
 import { connect } from 'react-redux';
 import { 
     closeModal,
 } from 'actions';
-import MovieModal from './MovieModal';
 
 const mapDispatchToProps = (dispatch) => ({
     closeModal: () => dispatch(closeModal()),
@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = state => ({
     isOpen: state.moviesModal.isOpen,
+    title: state.moviesModal.data.title,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieModal);
-
+export default connect(mapStateToProps, mapDispatchToProps)(MovieModalHeader);

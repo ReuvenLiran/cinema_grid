@@ -5,21 +5,31 @@ const InputField = props => {
     const { 
         placeHolder,
         onChange,
+        onChangedValue,
         value,
     } = props;
+
     return (<input
         type="text"
         value={value}
         className="form-control" 
         placeholder={placeHolder} 
-        onChange={onChange}
+        onChange={e => {
+            onChange && onChange(e);
+            const newVal = e.target.value;
+            onChangedValue(newVal);
+        }}
     />);
 };
 
 InputField.propTypes = {
-    onChange: PropTypes.func.isRequired,
-    value: PropTypes.string.isRequired,
-    placeHolder: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    onChangedValue: PropTypes.func,    
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]).isRequired,
+    placeHolder: PropTypes.string,
 };
 
 export default InputField;

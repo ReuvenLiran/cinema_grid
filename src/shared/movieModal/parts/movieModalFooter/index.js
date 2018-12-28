@@ -1,0 +1,1 @@
+export { default as MovieModalFooter } from './MovieModalFooter';

@@ -22,18 +22,17 @@ import {
 
 import { 
 	GET_MOVIES,
-	GET_MOVIES_SUCCESS,
+	SELECT_MOVIE,
 	getMovies as getMoviesAction,
 	getGenres as getGenresAction, 
 	GET_GENRES,
+	updateModal,
 	initalizeMovies,
 } from 'actions';
 
 const dataService = store => next => async action => {
 	next(action)
-	console.log(action.type);
 	switch (action.type) {
-
 	case GET_GENRES: {
 		const generes = await getGenresAPI();
 		next(getGenresAction(generes));
@@ -71,16 +70,17 @@ const dataService = store => next => async action => {
 		}
 		break;
 	}
-	// case GET_MOVIES_SUCCESS: {
-	// 	console.log(GET_MOVIES_SUCCESS);
-	// 	const { movies } = store.getState();
-	// 	const editeMovies = movies.reduce((movie, total) => {
-	// 		const { id, ...data } = movie;
-	// 		total.add(id, data);
-	// 	}, new Map());
-	// 	next(initalizeMovies(editeMovies));
-	// 	break;
-	// }
+	case SELECT_MOVIE: {
+		const { 
+			moviesUI: {
+				editedMovies,
+			}, 
+		} = store.getState();
+		const { id } = action;
+		const movieData = editedMovies.get(id);
+		next(updateModal(movieData));
+		break;
+	}	
 	default:
 		break
 	}

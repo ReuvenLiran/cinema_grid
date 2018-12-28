@@ -15,7 +15,7 @@ class App extends Component {
           movies={movies}
           genresOptions={genresOptions}
         />
-        <MovieModal />
+        <MovieModal key="MAIN_MOVIE_MODAL" />
       </div>
     );
   }

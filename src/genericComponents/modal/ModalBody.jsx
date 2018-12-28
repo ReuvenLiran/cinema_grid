@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 const ModalBody = props => {
     const { children } = props;
-    return (<div className="modal-body">
+    return (<div
+            key={'modal-body'}
+            className="modal-body"
+        >
             {children}
         </div>);
 };
